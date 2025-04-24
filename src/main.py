@@ -1,8 +1,10 @@
 from textnode import *
+from html_page_generator import *
+
 
 def main():
-    T1 = TextNode("Example", TextType.LINK, "https://www.boot.dev")
-    print(T1)
+    move_files("static", "public")
+    generate_page_recursive("content", "template.html", "public")
 
 if __name__ == "__main__":
     main()

@@ -35,6 +35,38 @@ class TestTextNode(unittest.TestCase):
             "TextNode(This is a text node, normal, https://www.boot.dev)", repr(node)
         )
 
+    def test_text(self):
+        node = TextNode("This is a text node", TextType.NORMAL_TEXT)
+        html_node = text_node_to_html_node(node)
+        self.assertEqual(html_node.tag, None)
+        self.assertEqual(html_node.value, "This is a text node")
+    
+    def test_bold(self):
+        node = TextNode("This is a text node", TextType.BOLD_TEXT)
+        html_node = text_node_to_html_node(node)
+        self.assertEqual(html_node.to_html(), "<b>This is a text node</b>")
+
+    def test_italic(self):
+        node = TextNode("This is a text node", TextType.ITALIC_TEXT)
+        html_node = text_node_to_html_node(node)
+        self.assertEqual(html_node.to_html(), "<i>This is a text node</i>")
+
+    def test_code(self):
+        node = TextNode("This is a text node", TextType.CODE_TEXT)
+        html_node = text_node_to_html_node(node)
+        self.assertEqual(html_node.to_html(), "<code>This is a text node</code>")
+
+    def test_link(self):
+        node = TextNode("Click me!", TextType.LINK, "https://www.google.com")
+        html_node = text_node_to_html_node(node)
+        self.assertEqual(html_node.to_html(), '<a href="https://www.google.com">Click me!</a>')
+
+    def test_img(self):
+        node = TextNode("Description of image", TextType.IMAGE, "url/of/image.jpg")
+        html_node = text_node_to_html_node(node)
+        self.assertEqual(html_node.to_html(), '<img src="url/of/image.jpg" alt="Description of image" />')
+    
+
 
 if __name__ == "__main__":
     unittest.main()
