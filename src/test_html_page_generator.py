@@ -49,3 +49,6 @@ Here's the deal, **I like Tolkien**.
         """
         title = extract_title(md)
         self.assertEqual(title, "Tolkien Fan Club")
+
+if __name__ == "__main__":
+    unittest.main()

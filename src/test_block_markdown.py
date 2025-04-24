@@ -107,3 +107,7 @@ mroe mroe more mroe more mroe mroe more more more ``
         
         self.assertListEqual(result, [BlockType.PARAGRAPH, BlockType.PARAGRAPH,
         BlockType.PARAGRAPH, BlockType.PARAGRAPH, BlockType.PARAGRAPH])
+
+
+if __name__ == "__main__":
+    unittest.main()

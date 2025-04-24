@@ -283,3 +283,7 @@ class Test_Inline_Markdown(unittest.TestCase):
             TextNode(" end", TextType.NORMAL_TEXT),
         ]
         self.assertListEqual(result, expected_result)
+
+
+if __name__ == "__main__":
+    unittest.main()
