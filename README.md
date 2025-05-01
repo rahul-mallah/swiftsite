@@ -17,14 +17,11 @@ git clone https://github.com/rahul-mallah/swiftsite.git
 cd swiftsite
 ```
 
-Launch the current site locally with following steps :
-1. Open main.py file
-2. Replace "docs" with "public"
-3. launch the site with the command below
+Launch the current site locally:
 
 ```
 python3 src/main.py
-cd public && python3 -m http.server 8888
+cd docs && python3 -m http.server 8888
 ```
 
 
